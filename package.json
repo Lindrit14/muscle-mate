@@ -1,0 +1,30 @@
+{
+  "name": "muscle-mate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-nodemon": "nodemon app.js",
+    "build:css": "tailwindcss build ./public/styles.css -o ./public/tailwind.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lindrit14/muscle-mate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lindrit14/muscle-mate/issues"
+  },
+  "homepage": "https://github.com/Lindrit14/muscle-mate#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
