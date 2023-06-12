@@ -9,30 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/47657bff12.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
-    <!-- progressbar -->
-    <!-- <div class="progress-bar"> </div> -->
-
-  <!-- <header class="header">
-    <div class="logoContainer">
-        <img class="logo-mascot" src="img/fr-removebg-preview.png" alt="mascot of MuscleMate">
-        <img class="logo-name" src="img/mm-removebg-preview.png" alt="MuscleMate">
-    </div>
-    <nav class="nav">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">Quotes</a>
-        <a class="nav-link" href="#">Exercises</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Contact</a>
-    </nav>
-    <div class="header-buttons">
-
-        <button class="btn btn-primary">Create Workout</button>
-    </div>
-</header> -->
 
 <!-- NAVBAR -->
 
@@ -42,8 +23,9 @@
         <img src="img/Rastergrafik.png" class="h-14 mr-3" alt="">
         <span class="self-center text-2xl font-black whitespace-nowrap">MuscleMate</span>
       </a>
-      <div class="flex md:order-2">
-        <button type="button" class="btn-primary">Get started</button>
+      <div class="flex md:order-2 gap-2">
+        <button type="button" class=" text-gray-600 hover:text-blue-400"> <a href="login.html">Sign Up</a> </button>
+        <button type="button" class="btn-primary"><a href="login.html">Register Now</a></button>
         <button type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -52,7 +34,7 @@
       <div id="navbar-sticky" class=" md:flex">
         <ul class="flex space-x-4">
           <li>
-            <a href="#" class=" text-gray-600 hover:text-blue-400" aria-current="page">Home</a>
+            <a href="index.html" class=" text-gray-600 hover:text-blue-400" aria-current="page">Home</a>
           </li>
           <li>
             <a href="#" class="text-gray-600 hover:text-blue-400">About</a>
@@ -63,13 +45,15 @@
           <li>
             <a href="#" class="text-gray-600 hover:text-blue-400">Contact</a>
           </li>
+          <li>
+            <a href="/workouts.html" class="text-gray-600 hover:text-blue-400">Workouts</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   
   
-
 <!-- MAIN -->
 <div class="flex justify-center mt-5 w-auto">
     <div class="p-3  ">
@@ -165,6 +149,6 @@
   
 
       
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
