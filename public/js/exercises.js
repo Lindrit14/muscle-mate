@@ -55,7 +55,30 @@ export function makePostRequest(exercise) {
     });
 }
 
+// Assuming you have the necessary HTML elements defined in your dashboard.html file
 
+const logoutButton = document.getElementById('logout-button');
+
+logoutButton.addEventListener('click', () => {
+  fetch('/logout', {
+    method: 'POST',
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Logout successful, redirect or perform any other necessary action
+        const savedExercises = data.exercises || [];
+        // Handle the saved exercises as per your requirements
+        window.location.href = '/login.html';
+      } else {
+        // Logout failed, display an error message or perform appropriate actions
+        console.error('Logout failed:', data.error);
+      }
+    })
+    .catch(error => {
+      console.error('Error occurred during logout:', error);
+    });
+});
 
 
 

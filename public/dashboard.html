@@ -24,8 +24,8 @@
         <span class="self-center text-2xl font-black whitespace-nowrap">MuscleMate</span>
       </a>
       <div class="flex md:order-2 gap-2">
-        <button type="button" class=" text-gray-600 hover:text-blue-400"> <a href="login.html">Sign Up</a> </button>
-        <button type="button" class="btn-primary"><a href="register.html">Register Now</a></button>
+        <button id="logout-button" type="button" class=" text-gray-600 hover:text-blue-400"> <a href="login.html">Logout</a> </button>
+
         <button type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -33,7 +33,9 @@
       </div>
       <div id="navbar-sticky" class=" md:flex">
         <ul class="flex space-x-4">
-         
+          <li>
+            <a href="/dashboard.html" class=" text-gray-600 hover:text-blue-400" aria-current="page">Home</a>
+          </li>
           <li>
             <a href="#" class="text-gray-600 hover:text-blue-400">About</a>
           </li>
@@ -43,13 +45,47 @@
           <li>
             <a href="#" class="text-gray-600 hover:text-blue-400">Contact</a>
           </li>
+          <li>
+            <a href="/workouts.html" class="text-gray-600 hover:text-blue-400">Workouts</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   
   
+<!-- MAIN -->
+<div class="flex justify-center mt-5 w-auto">
+    <div class="p-3  ">
+      <div id="searchContainer" class="flex items-center mb-5 gap-4 justify-center">
+        <input type="text" id="searchInput" placeholder="Search exercises by name" class="w-3/4 py-2 px-4 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button id="searchButton" class="btn-primary">Search</button>
+      </div>
+      <div id="mainContainer" class="flex flex-wrap gap-3 w-full justify-center"> 
 
+      </div>
+      <div class="flex justify-center mt-4">
+        <button id="loadMoreBtn" class="btn-primary">Load More</button>
+      </div>
+    </div>
+</div>
+  
+<button class="back-to-top hidden">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="back-to-top-icon"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M7 11l5-5m0 0l5 5m-5-5v12"
+      />
+    </svg>
+  </button>
 
 
  <!-- FOOTER -->
@@ -110,8 +146,9 @@
     </div>
 </footer>
 
+  
 
-
-    
+      
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
