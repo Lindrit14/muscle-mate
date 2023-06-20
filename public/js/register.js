@@ -18,11 +18,9 @@ registerForm.addEventListener('submit', (event) => {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-       
+  
         window.location.href = '/login.html';
-
       } else {
-        
         console.error('Registration failed:', data.error);
       }
     })
