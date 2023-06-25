@@ -105,9 +105,13 @@ app.post('/logout', (req, res) => {
   });
 });
 
+// tried to render | __dirname absoluter Pfad
+app.get("/savedquotes", (req, res) => {
 
+  const quotespath = path.join(__dirname, "public", "savedquotes.html");
 
-
+  res.sendFile(quotespath);
+})
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000/');
