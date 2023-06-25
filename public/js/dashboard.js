@@ -38,6 +38,7 @@ quoteBtn.addEventListener("click", randomQuote);
 soundBtn.addEventListener("click", () => {
   //ist eine web speech Api für speech requests
   let utterance = new SpeechSynthesisUtterance(quoteText.innerText);
+  utterance.lang = 'en-US';
   speechSynthesis.speak(utterance); //sagt die Quote
 })
 
