@@ -34,14 +34,16 @@ app.get("/users", (req, res) => {
 
 app.put("/stats/:username", function (req, res) {
   const id = req.params.name;
-  const exists = id in users;
+  
+  const username = req.params.username;
+  const password = req.body.password;
 
-  users[req.params.name] = req.body;
+  const exists = Object.values(users).some(user => user.username === username && user.password === password);
 
   if (!exists) {
     res.status(201);
-    res.send(req.body);
   } else {
+    users[username] = req.body;
     res.sendStatus(200);
   }
 });
