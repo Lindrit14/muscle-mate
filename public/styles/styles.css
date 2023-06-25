@@ -8,3 +8,11 @@ body {
 .makepicWhite{
     filter: brightness(0) invert(1);
 }
+
+.quotes{
+    font-weight: bold;
+}
+
+.writer-quotes{
+    font-style: italic;
+}

@@ -8,6 +8,7 @@ const indexController = require('../controllers/indexController');
 
 router.get("/allExercises", indexController.getAllExercises)
 
+router.get("/oneQuote", indexController.getOneQuote)
 
 router.get("/exercisesByBodyPart/:bodyPart", indexController.getExercisesByBodyPart)
 

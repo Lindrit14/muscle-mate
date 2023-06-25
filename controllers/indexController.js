@@ -7,6 +7,34 @@ const URL = process.env.URL;
 const API_KEY= process.env.API_KEY;
 const API_HOST = process.env.API_HOST;
 
+const QOUTE_URL = process.env.QOUTE_URL;
+const QOUTE_API_KEY= process.env.QOUTE_API_KEY;
+const QOUTE_API_HOST = process.env.QOUTE_API_HOST;
+
+
+
+exports.getOneQuote = async (req,res) =>{
+
+  const options = {
+    method: 'GET',
+    url: QOUTE_URL,
+    params: {
+      category: 'fitness',
+      limit: '1'
+    },
+    headers: {
+      'X-RapidAPI-Key': QOUTE_API_KEY,
+      'X-RapidAPI-Host': QOUTE_API_HOST
+    }
+  };
+  try {
+    const result = await axios.request(options);
+    res.json(result.data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+
+}
 
 exports.getAllExercises = async (req,res) =>{
 

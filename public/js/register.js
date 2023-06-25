@@ -6,6 +6,10 @@ registerForm.addEventListener('submit', (event) => {
 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
+  const name = document.getElementById('name').value;
+  const age = document.getElementById('age').value;
+  const weight = document.getElementById('weight').value;
+  const height = document.getElementById('height').value;
   
 
   fetch('/register', {
@@ -13,7 +17,7 @@ registerForm.addEventListener('submit', (event) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ username, password })
+    body: JSON.stringify({ username, password, name, age, weight, height })
   })
     .then(response => response.json())
     .then(data => {

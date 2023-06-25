@@ -9,8 +9,6 @@ const session = require('express-session');
 
 const users = require("./userModel.js")
 
-
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -32,6 +30,20 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   const userList = Object.values(users);
   res.json(userList);
+});
+
+app.put("/stats/:username", function (req, res) {
+  const id = req.params.name;
+  const exists = id in users;
+
+  users[req.params.name] = req.body;
+
+  if (!exists) {
+    res.status(201);
+    res.send(req.body);
+  } else {
+    res.sendStatus(200);
+  }
 });
 
 app.get("/addExercise", (req, res) => {
@@ -58,10 +70,10 @@ app.delete('/deleteExercise/:exerciseId', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, name, age, weight, height } = req.body;
 
  if (!users[username]) {
-    users[username] = { username, password };
+    users[username] = { username, password, name, age, weight, height };
     res.json({ success: true });
   } else {
     res.status(409).json({ success: false, error: 'Username already exists' });
