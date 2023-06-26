@@ -107,7 +107,6 @@ app.post('/logout', (req, res) => {
   });
 });
 
-app.get()
 
 // tried to render | __dirname absoluter Pfad
 app.get("/savedQuote", (req, res) => {
