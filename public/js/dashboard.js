@@ -18,6 +18,7 @@ const quoteBtn = document.querySelector("button");
 
 const soundBtn = document.querySelector(".sound");
 const copyBtn = document.querySelector(".copy");
+const saveBtn =  document.querySelector(".saved");
 
 // random quote function
 function randomQuote(){
@@ -45,6 +46,35 @@ soundBtn.addEventListener("click", () => {
 copyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(quoteText.innerText);
 })
+
+
+
+function saveQuote(quote) {
+  fetch("/savedQuote", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+    },
+    body: quote
+  })
+    .then(response => response.text()) 
+    .then(data => {
+
+      console.log(data); 
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+
+
+saveBtn.addEventListener("click", () => {
+  const quote = document.getElementById("quote").innerText
+  saveQuote(quote)
+})
+
+
 
 
 

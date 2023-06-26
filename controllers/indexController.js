@@ -8,6 +8,8 @@ const API_KEY= process.env.API_KEY;
 const API_HOST = process.env.API_HOST;
 
 
+
+
 exports.getAllExercises = async (req,res) =>{
 
   const options = {

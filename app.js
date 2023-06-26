@@ -9,6 +9,8 @@ const session = require('express-session');
 
 const users = require("./userModel.js")
 
+const quotes = require("./quote.Model")
+
 
 
 const app = express();
@@ -105,13 +107,28 @@ app.post('/logout', (req, res) => {
   });
 });
 
+app.get()
+
 // tried to render | __dirname absoluter Pfad
-app.get("/savedquotes", (req, res) => {
-
-  const quotespath = path.join(__dirname, "public", "savedquotes.html");
-
-  res.sendFile(quotespath);
+app.get("/savedQuote", (req, res) => {
+  const quotesSaved = Object.values(quotes);
+  res.send(Object.values(quotes));
 })
+
+app.post("/savedQuote", async (req, res)=>{
+  try{
+    const quote = req.body
+    console.log(quote)  
+    Object.values(quotes).push(quote)
+    res.send("YOooooooooooooooo")
+  }catch (e){
+    console.log("Wong")
+  }
+
+
+
+})
+
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000/');
