@@ -29,5 +29,6 @@ export function createQuotes(QuotesArray, firstLoad) {
         mainElement.append(article);
         article.append(text);
         article.append(author);
+        
       });
 }

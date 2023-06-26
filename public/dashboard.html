@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/47657bff12.js" crossorigin="anonymous"></script>
     <title>Document</title>
+
 </head>
 <body class="bg-stone-200">
 
@@ -38,6 +39,11 @@
           
           <a href="/stats.html" class="text-gray-600 hover:text-blue-400"><i class="fa-solid fa-chart-column text-white hover:text-amber-500 hover:animate-pulse"></i></a>
         </div>
+
+        <div id="savedquotes" class="text-3xl  text-center">
+          <a href="/savedquotes" class="text-gray-600 hover:text-blue-400"> <i class="fa fa-quote-right text-white hover:text-amber-500 hover:animate-pulse" aria-hidden="true"></i> </a>
+        </div>
+
       </div>
 
       <div id="logout" class=" flex flex-col gap-4 text-4xl  text-center m-4">
@@ -52,12 +58,51 @@
 
 
 
-      <div id="middle-container" class="flex h-1/2">
-        <div id="quote-otd" class=" flex w-full bg-slate-50 rounded-xl justify-center items-center drop-shadow-2xl ">
-  
+      <div id="middle-container" class="flex flex-col  h-1/2 justify-center items-center">
+        
           
-        </div>
-      </div>
+
+          <div id="mainContainer" class=" flex flex-col w-full bg-slate-50 rounded-xl justify-around items-center drop-shadow-2xl h-full  ">
+            
+          
+
+            <h1 class="text-4xl text-center font-bold font-sans ">  Quote of the Day </h1>
+
+            <div id="quote-otd" class="flex justify-center w-2/3 italic">
+
+            </div>
+
+            <div id="icon-Container" class="flex justify-between w-2/3">
+
+              <div class="flex justify-start gap-4">
+
+                <button id="sound-icon" class="rounded-full p-2 bg-blue-500 text-white">
+                  <i class="fas fa-volume-up"></i>
+                </button>
+  
+                <button id="copy-icon" class="rounded-full p-2 bg-blue-500 text-white">
+                  <i class="fas fa-copy"></i>
+                </button>
+
+              </div>
+           
+              <button id="save-Btn" class="btn-primary">New Quote</button>
+
+            </div>
+
+            
+            
+
+          </div>
+
+        
+        
+
+        
+          </div>
+
+          
+        
       
       
       <div id="bottom-container" class="flex gap-3 h-1/2 ">
