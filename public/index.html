@@ -16,8 +16,8 @@
 <body class="m-0">
 
 <!-- NAVBAR -->
-
-<nav class="bg-white w-full z-20 top-0 left-0 border-b border-gray-200 drop-shadow-md">
+<section class="h-screen">
+  <nav class="bg-white w-full z-20 top-0 left-0 border-b border-gray-200 drop-shadow-md">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
       <a href="#" class="flex items-center">
         <img src="img/Rastergrafik.png" class="h-14 mr-3" alt="">
@@ -48,83 +48,170 @@
     </div>
   </nav>
   
-  <header class="flex items-center p-20 gap-20 background-svg h-screen">
+  <header class="flex items-center p-20 gap-20 background-svg h-screen drop-shadow-lg ">
     <div id="header-picture" class="w-1/2">
       <img src="img/Rastergrafik.png" alt="logo">
     </div>
     <div id="header-text" class="flex flex-col flex-wrap w-1/2 gap-3 ">  
       <div id="upper-text">
         <h1 class="text-8xl">Muscle Mate</h1>
-        <p class="text-4xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, ipsa.</p>
+        <p class="text-4xl"> Ignite Your Motivation, Embrace the Challange!  </p>
       </div>
       <div id="lower-button">
-        <button class="btn-primary ">Get Started</button>
+        <a href="login.html" class="place-self-end ">  <button class="btn-primary ">Join Now</button></a>
         
       </div>
       
     </div>
   </header>
+</section>
 
-  <div id="About-us" class="flex flex-col items-center gap-3 p-8 bg-white">
-    <div id="top-about ">
+  <div id="About-us" class="flex flex-col items-center  p-8 bg-white">
+    <div id="top-about " class="p-10">
       <h1 class="text-4xl">About Muscle Mate</h1>
     </div>
-    <div id="text-part" class="flex gap-3  ">
-      <div id="bottom-about-1" class="w-1/3">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem reiciendis libero obcaecati quas laborum odio, itaque, quis eligendi doloribus et nisi molestias? Unde, aliquid earum! Voluptatem veniam similique sequi iusto?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, sed esse voluptate delectus ratione natus ea vero eum in ad voluptatum ipsa expedita iusto, a molestiae modi minus culpa nisi.
-      
-      </div>
-      <div id="bottom-about-1" class="w-1/3">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem reiciendis libero obcaecati quas laborum odio, itaque, quis eligendi doloribus et nisi molestias? Unde, aliquid earum! Voluptatem veniam similique sequi iusto?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, sed esse voluptate delectus ratione natus ea vero eum in ad voluptatum ipsa expedita iusto, a molestiae modi minus culpa nisi.
+    <div id="about-us-inner" class="flex   p-10">
+      <div id="text-part" class="w-1/2 flex  flex-col justify-center items-start gap-5">
         
+        <p id="about-us-text" class="tracking-normal text-justify">
+          We are a team of fitness enthusiasts who share a common goal: to inspire and empower 
+          individuals to embrace an active lifestyle. Our mission is to motivate you to step into the gym and prioritize your physical well-being.
+  
+  At the core of our project lies the belief that everyone has the potential to transform their body and improve their fitness 
+  levels. We stand for inclusivity, supporting individuals of all fitness levels and backgrounds on their journey towards a healthier lifestyle. Our team is dedicated to curating a diverse range of exercises to cater to various preferences and goals.
+<br>  Moreover, we understand that motivation is key in sustaining a consistent workout routine. That's why we provide daily quotes 
+  that aim to uplift and inspire you along the way. We want to be your reliable companion, offering guidance and encouragement whenever you need it.
+  
+  With our app, we aim to create a supportive and vibrant community where fitness enthusiasts can connect, share their progress, 
+  and celebrate each other's achievements. 
+  <br> Together, let's embark on this transformative journey and unlock your full potential. Join us today and embrace the power of fitness!
+        </p>
+       <a href="login.html" class="place-self-end ">  <button class="btn-primary ">Join Now</button></a>
+       
+
       </div>
-      <div id="bottom-about-1" class="w-1/3">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem reiciendis libero obcaecati quas laborum odio, itaque, quis eligendi doloribus et nisi molestias? Unde, aliquid earum! Voluptatem veniam similique sequi iusto?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, sed esse voluptate delectus ratione natus ea vero eum in ad voluptatum ipsa expedita iusto, a molestiae modi minus culpa nisi.
+      <div id="team-picture" class="w-1/2  drop-shadow-lg ml-40">
+        <img src="img/annie-spratt-hCb3lIB8L8E-unsplash (1).jpg" alt="a picture of the muscle-mate team" class="rounded-lg">
       </div>
     </div>
+ 
   </div>
 
-  <div id="services" class="flex h-72 gap-12 justify-evenly m-10 items-center">
-    <div id="database-exercises" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3 ">
-      <div id="database-exercises-icon" class=" flex bg-indigo-300 w-24 h-24 justify-center items-center rounded-full ">
-        <div id="icon1" class="text-4xl">
-          <i class="fa-solid fa-database" style="color: #ffffff;"></i>
+  <div id="services-all" class="flex flex-col justify-center items-center pt-10 pb-10">
+
+    <h1 class="text-4xl">Services</h1>
+
+
+    <div id="services-inner" class="flex h-72 gap-12 justify-evenly m-10 items-center">
+
+      <div id="database-exercises" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3 ">
+        <div id="database-exercises-icon" class=" flex bg-indigo-300 w-24 h-24 justify-center items-center rounded-full ">
+          <div id="icon1" class="text-4xl">
+            <i class="fa-solid fa-database" style="color: #ffffff;"></i>
+          </div>
+        </div>
+        <div id="database-exercises-info" >
+          <p class="text-m text-gray-400 tracking-normal text-justify"> Discover our vast exercise library with 1000+ options. 
+            From classic movements to innovative techniques, we cater to all fitness levels. 
+            Our detailed GIFs ensure you execute each exercise correctly, targeting specific muscle groups and keeping your workouts exciting and effective.</p>
         </div>
       </div>
-      <div id="database-exercises-info" >
-        <p class="text-m text-gray-400"> Lorem ipsum dolor sit amet consectetur repellat maiores, quibusdam temporibus aliquam, numquam maxime veniam nisi cupiditate eligendi quam ad?</p>
+        
+  <div id="workouts" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3 ">
+    <div id="workouts-icon" class="bg-amber-300  w-24 h-24 flex justify-center items-center rounded-full">
+      <div id="icon2" class="text-4xl">
+        <i class="fa-solid fa-dumbbell" style="color: #ffffff;"></i>
       </div>
     </div>
-      
-<div id="workouts" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3 ">
-  <div id="workouts-icon" class="bg-amber-300  w-24 h-24 flex justify-center items-center rounded-full">
-    <div id="icon2" class="text-4xl">
-      <i class="fa-solid fa-dumbbell" style="color: #ffffff;"></i>
+  
+    <div id="workouts-info">
+      <p class=" text-gray-400 tracking-normal text-justify"> Tailor your training to fit your needs. Design personalized routines by selecting exercises from our library, setting duration, intensity, and target areas.  Enjoy a balanced and progressive training program that adapts to your progress.</p>
+    </div>
+  
+  </div>
+        <div id="quotes" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3">
+          <div id="quotes-icon" class="bg-green-300  w-24 h-24 flex justify-center items-center rounded-full">
+            <div id="icon3" class="text-4xl">
+              <i class="fa-solid fa-comment" style="color: #ffffff;"></i>
+            </div>
+          </div>
+  
+          <div id="quotes-info">
+            <p class="text-m text-gray-400 tracking-normal text-justify"> Daily Motivational Quotes:
+              Stay inspired on your fitness journey with our daily quotes. Cultivate a positive mindset, pushing beyond limits and overcoming obstacles. Let these empowering words remind you of your strength and resilience.
+          </p>
+          </div>
+        </div>
+  
+        
+    </div>
+
+    <a href="login.html" class="">  <button class="btn-primary ">Join Now</button></a>
+
+  </div>
+
+
+<div id="contact-us" class="flex flex-col bg-amber-500 w-full h-screen justify-center items-center gap-3">
+
+
+  <div id="get-in-touch-text" class="flex flex-col gap-2 items-center justify-center text-white drop-shadow-lg mb-7">
+    <h1  class="text-4xl">Get In Touch</h1>
+    <p class="text-2xl">Contact us for a feedback, help or join the team.</p>
+  </div>
+
+  <div id="ways-of-contacting" class="flex w-[36rem] h-32 gap-4 drop-shadow-lg">
+    <div id="address" class="flex justify-center items-center w-1/3 p-6 bg-teal-500 rounded-lg ">
+      <p class="text-lg">Favoritenstraße 226, 1100 Wien</p>
+    </div>
+    <div id="phone-number" class="w-1/3  flex justify-center items-center p-6 bg-teal-500 rounded-lg">
+      <p class="text-lg">+43650986969</p>
+    </div>
+    
+    <div id="email" class="w-1/3 flex justify-center items-center p-6 bg-teal-500 rounded-lg">
+      <p class="text-sm">musclemate23@gmail.com</p>
     </div>
   </div>
 
-  <div id="workouts-info">
-    <p class="text-m text-gray-400"> Lorem ipsum dolor sit amet consectetur repellat maiores, quibusdam temporibus aliquam, numquam maxime veniam nisi cupiditate eligendi quam ad?</p>
+  <div id="contact-us-form" class="bg-teal-500 w-[36rem] h-[30rem] p-5 drop-shadow-lg rounded-lg flex items-center justify-center">
+
+    <form action="" class=" flex flex-col w-full h-full items-center justify-around gap-4">
+ <div id="mainContainer" class="flex justify-center w-full gap-3 drop-shadow-lg ">
+      <div id="left-side" class="flex flex-col justify-center items-center gap-2 w-1/2 h-[16rem]">
+        <div id="form-name" class="icon-insider flex justify-start items-center w-full h-1/3">
+          <label for="name"></label>
+          <i class="fa-solid fa-user ml-3" ></i>
+          <input type="text" name="name" id="name" placeholder="Enter your name" class="rounded-lg p-3 pl-10 ">
+        </div>
+  
+        <div id="form-mail" class="flex icon-insider justify-start items-center w-full h-1/3">
+          <label for="mail"></label>
+          <i class="fa-solid fa-envelope ml-3"></i>
+          <input type="email" name="mail" id="mail" placeholder="Enter your mail" class="rounded-lg p-3 pl-10">
+        </div>
+  
+        <div id="form-phone-number" class="flex icon-insider justify-start items-center w-full h-1/3">
+          <label for="phone-number"></label>
+          <i class="fa-solid fa-phone ml-3"></i>
+          <input type="text" name="name" id="name" placeholder="Enter your number" class="rounded-lg p-3 pl-10">
+        </div>
+      </div>
+
+<div id="right-side" class=" flex items-center justify-center w-1/2 h-full">
+  <div id="form-message" class="w-full h-full">
+    <label for="message"></label>
+<textarea name="" id="" cols="30" rows="10" class="max-w-[16rem] max-h-[16rem] rounded-lg p-3" placeholder="Enter your message"></textarea>  
+</div>
+</div>
+</div>
+
+      <div id="send-message-button " class="flex justify-center items-center w-full">
+        <button class="btn-primary">Send Message</button>
+      </div>
+
+    </form>
   </div>
 
 </div>
-      <div id="quotes" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3">
-        <div id="quotes-icon" class="bg-green-300  w-24 h-24 flex justify-center items-center rounded-full">
-          <div id="icon3" class="text-4xl">
-            <i class="fa-solid fa-comment" style="color: #ffffff;"></i>
-          </div>
-        </div>
-
-        <div id="quotes-info">
-          <p class="text-m text-gray-400"> Lorem ipsum dolor sit amet consectetur repellat maiores, quibusdam temporibus aliquam, numquam maxime veniam nisi cupiditate eligendi quam ad?</p>
-        </div>
-      </div>
-
-      
-  </div>
 
  <!-- FOOTER -->
 
