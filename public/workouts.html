@@ -50,36 +50,29 @@
       </nav>
 
 
-<!-- 
-      <header> 
-        <Workouts Split Types
-        <div class="container mx-auto p-8 flex flex-col items-center">
-            <h1 class="text-3xl font-bold mb-8">Workout Splits</h1>
-        
-            <div class="flex justify-center">
-              <div class="relative inline-block">
-                <button id="dropdown-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Select a Workout Split
-                </button>
-                <div id="dropdown-content" class="absolute hidden bg-white border border-gray-200 mt-2 py-2 w-64 rounded">
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Full Body Split (Beginner)">Full Body Split (Beginner)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Upper/Lower Split (Intermediate)">Upper/Lower Split (Intermediate)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Push/Pull/Legs Split (Intermediate)">Push/Pull/Legs Split (Intermediate)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Body Part Split (Intermediate-Advanced)">Body Part Split (Intermediate-Advanced)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Upper/Lower/Push/Pull/Legs Split (Advanced)">Upper/Lower/Push/Pull/Legs Split (Advanced)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Push/Pull/Legs/Arms Split (Advanced)">Push/Pull/Legs/Arms Split (Advanced)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Powerlifting Split (Advanced)">Powerlifting Split (Advanced)</a>
-                  <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white" data-content="Bodybuilding Split (Advanced)">Bodybuilding Split (Advanced)</a>
-                </div>
-              </div>
+      <div class="container mx-auto p-8 flex flex-col items-center">
+        <h1 class="text-3xl font-bold mb-8">Workout Splits</h1>
+    
+        <div class="flex justify-center">
+          <div class="relative inline-block">
+            <select id="splits">
+              <option value="fbs-b">Full Body Split (Beginner)</option>
+              <option value="uls-i">Upper/Lower Split (Intermediate)</option>
+              <option value="ppl-i">Push/Pull/Legs Split (Intermediate)</option>
+              <option value="bps-i">Body Part Split (Intermediate-Advanced)</option>
+              <option value="ulppl-a">Upper/Lower/Push/Pull/Legs Split (Advanced)</option>
+              <option value="ppla-s">Push/Pull/Legs/Arms Split (Advanced)</option>
+              <option value="ps-a">Powerlifting Split (Advanced)</option>
+              <option value="bs-a">Bodybuilding Split (Advanced)</option>
+              
+            </select>
             </div>
-        
-            <div id="selected-workout" class="mt-8 hidden">
-              <h2 class="text-xl font-bold">Selected Workout Split:</h2>
-              <p id="selected-workout-content" class="mt-4 text-gray-800"></p>
-            </div>
-          </div>
-        </header> -->
+        </div>
+        <br>
+        <button id="dropdown-btn" onclick="createSplit()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Select a Workout Split
+        </button>
+    </div>
 
 
 

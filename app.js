@@ -5,21 +5,17 @@ const http = require("http");
 const bodyParser = require("body-parser");
 const axios = require('axios');
 require('dotenv').config();
-const session = require('express-session');
+const jwt = require('jsonwebtoken');
 
 const users = require("./userModel.js")
+const exercisesModel = require("./exerciseModel.js")
+
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')))
-
-app.use(session({
-  secret: 'mjlz',
-  resave: false,
-  saveUninitialized: true
-}));
 
 app.use("/api", indexRouter);
 
@@ -32,50 +28,60 @@ app.get("/users", (req, res) => {
   res.json(userList);
 });
 
-app.put("/stats/:username", function (req, res) {
-  const id = req.params.name;
-  
-  const username = req.params.username;
-  const password = req.body.password;
-
-  const exists = Object.values(users).some(user => user.username === username && user.password === password);
-
-  if (!exists) {
-    res.status(201);
-  } else {
-    users[username] = req.body;
-    res.sendStatus(200);
-  }
+app.get("/exercise", (req, res) => {
+  res.json(Object.values(exercisesModel));
 });
 
-app.get("/addExercise", (req, res) => {
-  const savedExercises = req.session.exercises || [];
-  res.json(savedExercises);
-});
+app.put("/stats", authToken, function (req, res) {
+  const {username} = req.user;
 
-app.post("/addExercise", async (req, res) => {
-  const exercise = req.body;
-  req.session.exercises = req.session.exercises || [];
-  req.session.exercises.push(exercise);
+  users[username].name = req.body.name;
+  users[username].age = req.body.age;
+  users[username].weight = req.body.weight;
+  users[username].height = req.body.height;
+
   res.sendStatus(200);
 });
 
-app.delete('/deleteExercise/:exerciseId', (req, res) => {
+app.get("/addExercise",authToken, (req, res) => {
+  const {username} = req.user;
+
+  let ex = exercisesModel[username].exercises;
+
+  res.json(ex);
+});
+
+app.post("/addExercise", authToken, async (req, res) => {
+  const exercise = req.body;
+  const {username} = req.user;
+
+  exercisesModel[username].exercises.push(exercise);
+  
+  res.sendStatus(200);
+});
+
+app.delete('/deleteExercise/:exerciseId',authToken, (req, res) => {
   const exerciseId = req.params.exerciseId;
-  const exercises = req.session.exercises || [];
-  const exerciseIndex = exercises.findIndex(exercise => exercise.id === exerciseId);
+  const {username} = req.user;
+
+  let ex = exercisesModel[username].exercises;
+
+  const exerciseIndex = ex.findIndex(exercise => exercise.id === exerciseId);
   if (exerciseIndex !== -1) {
-    exercises.splice(exerciseIndex, 1);
+    ex.splice(exerciseIndex, 1);
   }
-  req.session.exercises = exercises;
+
+  exercisesModel[username].exercises = ex;
+
   res.sendStatus(200);
 });
 
 app.post('/register', (req, res) => {
   const { username, password, name, age, weight, height } = req.body;
 
- if (!users[username]) {
+  if (!users[username]) {
     users[username] = { username, password, name, age, weight, height };
+    exercisesModel[username] = {exercises: []};
     res.json({ success: true });
   } else {
     res.status(409).json({ success: false, error: 'Username already exists' });
@@ -87,41 +93,29 @@ app.post('/login', (req, res) => {
   const user = users[username];
 
   if (user && user.password === password) {
-    req.session.user = user;
-    const savedExercises = req.session.exercises || [];
-    res.json({ success: true, exercises: savedExercises });
+    const token = jwt.sign({username},process.env.SECRET)
+    res.json({token:token})
   } else {
     res.status(401).json({ success: false, error: 'Invalid Username or Password' });
   }
 });
 
-function requireLogin(req, res, next) {
-  if (req.session.user) {
-    // User is logged in, proceed to the next middleware or route handler
-    next();
-  } else {
-    // User is not logged in, redirect to the login page or send an error response
-    res.redirect('/login');
+function authToken(req, res, next) {
+  const header = req.headers["authorization"]
+  const token = header
+  if (token == null){
+    return res.sendStatus(401)
   }
-}
 
-app.post('/logout', (req, res) => {
-  // Store the user's exercises in a separate variable
-  const savedExercises = req.session.exercises || [];
-
-  req.session.destroy((err) => {
-    if (err) {
-      res.status(500).json({ success: false, error: 'Logout failed' });
-    } else {
-      // Send the stored exercises along with the success response
-      res.json({ success: true, exercises: savedExercises });
+  jwt.verify(token, process.env.SECRET, (err, user) => {
+    if (err){
+      return res.sendStatus(403)
     }
-  });
-});
 
-
-
-
+    req.user = user
+    next()
+  })
+}
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000/');
