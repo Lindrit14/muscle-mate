@@ -19,12 +19,11 @@ export function createQuotes(QuotesArray, firstLoad) {
         //implementieren text-to-speak
         const speakButton = document.createElement("button");
         speakButton.classList.add("rounded-full", "p-2", "bg-blue-500", "text-white", "mb-4");
-
+        
         const speakIcon = document.createElement("i");
         speakIcon.classList.add("fas", "fa-volume-up");
-
-        speakButton.appendChild(speakIcon);
         
+        speakButton.appendChild(speakIcon);
         speakButton.addEventListener("click", () => {
           speakText(quote.quote); // Vorlesen des Zitats
         });
@@ -32,9 +31,12 @@ export function createQuotes(QuotesArray, firstLoad) {
         //copy btn
         const copyButton = document.createElement("button");
         copyButton.classList.add("rounded-full", "p-2", "bg-blue-500", "text-white", "mb-4", "ml-4"); // ml-4 for left margin
+
         const copyIcon = document.createElement("i");
         copyIcon.classList.add("fas", "fa-copy");
+
         copyButton.appendChild(copyIcon);
+        
         copyButton.addEventListener("click", () => {
           copyToClipboard(quote.quote);
         });
@@ -62,7 +64,7 @@ export function createQuotes(QuotesArray, firstLoad) {
 }
 
 
-// quote text-tospeak
+// quote text-tospeak func
 function speakText(text) {
   const speechSynthesis = window.speechSynthesis;
   const utterance = new SpeechSynthesisUtterance(text);
@@ -70,7 +72,7 @@ function speakText(text) {
   speechSynthesis.speak(utterance);
 }
 
-//copy button
+//copy button func
 function copyToClipboard(text) {
   const textarea = document.createElement("textarea");
   textarea.value = text;
