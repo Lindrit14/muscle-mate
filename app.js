@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 
 const users = require("./userModel.js")
 const exercisesModel = require("./exerciseModel.js")
+const quotesModel = require("./quotesModel.js")
 
 
 const app = express();
@@ -30,6 +31,10 @@ app.get("/users", (req, res) => {
 
 app.get("/exercise", (req, res) => {
   res.json(Object.values(exercisesModel));
+});
+
+app.get("/quotes", (req, res) => {
+  res.json(Object.values(quotesModel));
 });
 
 app.put("/stats", authToken, function (req, res) {
@@ -60,6 +65,39 @@ app.post("/addExercise", authToken, async (req, res) => {
   res.sendStatus(200);
 });
 
+app.get("/addedQuotes",authToken, (req, res) => {
+  const {username} = req.user;
+
+  let ex = quotesModel[username].quotes;
+
+  res.json(ex);
+});
+
+app.post("/addQuote", authToken, async (req, res) => {
+  const quotes = req.body;
+  const {username} = req.user;
+
+  quotesModel[username].quotes.push(quotes);
+  
+  res.sendStatus(200);
+});
+
+app.delete('/deleteQuote/:quote',authToken, (req, res) => {
+  const quoteId = req.params.quote;
+  const {username} = req.user;
+
+  let qu = quotesModel[username].quotes;
+
+  const quoteIndex = qu.findIndex(exercise => exercise.quote === quoteId);
+  if (quoteIndex !== -1) {
+    qu.splice(quoteIndex, 1);
+  }
+
+  quotesModel[username].quotes = qu;
+
+  res.sendStatus(200);
+});
+
 app.delete('/deleteExercise/:exerciseId',authToken, (req, res) => {
   const exerciseId = req.params.exerciseId;
   const {username} = req.user;
@@ -82,6 +120,7 @@ app.post('/register', (req, res) => {
   if (!users[username]) {
     users[username] = { username, password, name, age, weight, height };
     exercisesModel[username] = {exercises: []};
+    quotesModel[username] = {quotes: []};
     res.json({ success: true });
   } else {
     res.status(409).json({ success: false, error: 'Username already exists' });
