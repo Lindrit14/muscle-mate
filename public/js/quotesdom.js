@@ -19,9 +19,12 @@ export function createQuotes(QuotesArray, firstLoad) {
         //implementieren text-to-speak
         const speakButton = document.createElement("button");
         speakButton.classList.add("rounded-full", "p-2", "bg-blue-500", "text-white", "mb-4");
+
         const speakIcon = document.createElement("i");
         speakIcon.classList.add("fas", "fa-volume-up");
+
         speakButton.appendChild(speakIcon);
+        
         speakButton.addEventListener("click", () => {
           speakText(quote.quote); // Vorlesen des Zitats
         });
