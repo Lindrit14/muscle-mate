@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use("/api", indexRouter);
 
 app.get("/", (req, res) => {
-  res.render("index.html")
+  
 });
 
 app.get("/users", (req, res) => {
