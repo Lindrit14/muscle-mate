@@ -40,7 +40,8 @@ export function makePostRequest(exercise) {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization' : getCookie()
     },
     body: JSON.stringify(exercise)
   })
@@ -59,12 +60,29 @@ export function makePostRequest(exercise) {
 
 
 
-
-
-
-
-
-
+logoutButton.addEventListener('click', () => {
   
+  document.cookie = `token=`;
 
-  
+});
+
+function getCookie(){ 
+  const x = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("token="))
+  ?.split("=")[1];
+  return x;
+}
+
+function checkIfLogged(){
+  if(!getCookie()){
+    return false;
+  }
+  return true;
+}
+
+window.onload = function() {
+  if(!checkIfLogged()){
+    window.location.href="/login.html";
+  }
+}

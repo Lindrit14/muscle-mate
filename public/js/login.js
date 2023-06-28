@@ -15,8 +15,9 @@ loginForm.addEventListener('submit', (event) => {
   })
     .then(response => response.json())
     .then(data => {
-      if (data.success) {
+      if (data.token) {
         // Login successful, redirect or perform any other necessary action
+        document.cookie = `token=${data.token}`
         window.location.href = '/dashboard.html';
       } else {
         // Login failed, display an error message or perform appropriate actions

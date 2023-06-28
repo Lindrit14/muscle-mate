@@ -45,10 +45,12 @@
         </div>
 
       </div>
-
+      <div id="savedquotes" class="text-3xl  text-center">
+        <a href="/savedquotes.html" class="text-gray-600 hover:text-blue-400"> <i class="fa fa-quote-right text-white hover:text-amber-500 hover:animate-pulse" aria-hidden="true"></i> </a>
+      </div>
       <div id="logout" class=" flex flex-col gap-4 text-4xl  text-center m-4">
         <a href="#"><i class="fa-solid fa-user  text-white hover:text-amber-500 hover:animate-pulse"></i></a>
-        <a href="login.html"><i class="fa-solid fa-power-off text-white hover:text-amber-500 hover:animate-pulse"></i></a>
+        <a id="log-out" href="login.html"><i class="fa-solid fa-power-off text-white hover:text-amber-500 hover:animate-pulse"></i></a>
       </div>
 
 
@@ -58,51 +60,21 @@
 
 
 
-      <div id="middle-container" class="flex flex-col  h-1/2 justify-center items-center">
-        
-          
+  <div id="mainContainer" class="flex flex-col w-full bg-slate-50 rounded-xl justify-center items-center drop-shadow-2xl h-full">
+    <h1 class="text-4xl text-center font-bold font-sans mb-8">Quote of the Day</h1>
+    <div id="quote-otd" class="flex justify-center w-2/3 max-w-md flex-wrap p-10"></div>
+    <div id="icon-Container" class="flex justify-between w-2/3">
+      <div class="flex justify-start gap-4">
+        <!-- <button id="sound-icon" class="rounded-full p-2 bg-blue-500 text-white">
+          <i class="fas fa-volume-up"></i>
+        </button> -->
+        <!-- <button id="copy-icon" class="rounded-full p-2 bg-blue-500 text-white">
+          <i class="fas fa-copy"></i>
+        </button> -->
+      </div>
+    </div>
+  </div>
 
-          <div id="mainContainer" class=" flex flex-col w-full bg-slate-50 rounded-xl justify-around items-center drop-shadow-2xl h-full  ">
-            
-          
-
-            <h1 class="text-4xl text-center font-bold font-sans ">  Quote of the Day </h1>
-
-            <div id="quote-otd" class="flex justify-center w-2/3 italic ">
-
-            </div>
-
-            <div id="icon-Container" class="flex justify-between w-2/3">
-
-              <div class="flex justify-start gap-4">
-
-                <!-- <button id="sound-icon" class="rounded-full p-2 bg-blue-500 text-white">
-                  <i class="fas fa-volume-up"></i>
-                </button> -->
-  
-                <!-- <button id="copy-icon" class="rounded-full p-2 bg-blue-500 text-white">
-                  <i class="fas fa-copy"></i>
-                </button> -->
-
-              </div>
-           
-              <button id="save-Btn" class="btn-primary">New Quote</button>
-
-            </div>
-
-            
-            
-
-          </div>
-
-        
-        
-
-        
-          </div>
-
-          
-        
       
       
       <div id="bottom-container" class="flex gap-3 h-1/2 ">
