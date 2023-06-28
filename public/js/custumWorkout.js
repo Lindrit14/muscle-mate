@@ -31,6 +31,8 @@ async function fetchCustomWorkout(equipment, muscle, fitnessLevel, fitnessGoals)
 
 
 const workoutBtn = document.getElementById("getWorkoutBtn")
+const overlay = document.getElementById("overlay")
+const workoutContainer = document.getElementById("workoutContainer")
 
 workoutBtn.addEventListener("click", (e)=>{
     e.preventDefault()
@@ -38,6 +40,9 @@ workoutBtn.addEventListener("click", (e)=>{
     const muscleForm = document.getElementById("muscle").value
     const fitnessLevelForm = document.getElementById("fitnessLevel").value
     const fitnessGoalsForm = document.getElementById("fitnessGoals").value
+    
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
 
     fetchCustomWorkout(equipmentForm, muscleForm, fitnessLevelForm, fitnessGoalsForm)
     
@@ -46,5 +51,19 @@ workoutBtn.addEventListener("click", (e)=>{
     console.log(fitnessLevelForm);
     console.log(fitnessGoalsForm);
 })
+
+
+overlay.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (!workoutContainer.contains(e.target) && e.target !== workoutContainer) {
+
+    overlay.classList.add("hidden");
+    overlay.classList.remove("flex");
+  }
+  workoutContainer.innerHTML = ""; 
+});
+
+
+
 
 

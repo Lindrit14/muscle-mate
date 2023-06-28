@@ -57,14 +57,14 @@ export function renderWorkout(workoutObject){
 
 
 
-    workoutArticle.classList.add("flex" , "flex-col" ,"gap-6" ,"bg-slate-100" ,"w-1/2", "p-9", "rounded-lg")
-    divNameOfWorkout.classList.add("flex" ,"justify-center")
+    workoutArticle.classList.add("flex" , "flex-col" ,"gap-6" ,"bg-slate-100" ,"h-screen", "w-full", "p-9", "rounded-lg", "overflow-y-auto")
+    divNameOfWorkout.classList.add("flex" ,"justify-center", "text-2xl")
     warmUp.classList.add("flex", "flex-col", "justify-center" ,"gap-3")
-    warmUpTitle.classList.add()
+    warmUpTitle.classList.add("text-xl")
     mainExercise.classList.add("flex" ,"flex-col" ,"gap-6", "rounded-lg" ,"p-12")
-    mainExerciseTitle.classList.add()
+    mainExerciseTitle.classList.add("text-xl")
     coolDown.classList.add("flex" ,"flex-col" ,"gap-5")
-    coolDownTitle.classList.add()
+    coolDownTitle.classList.add("text-xl")
 
 
 
@@ -83,9 +83,9 @@ export function renderWorkout(workoutObject){
     h1warmUpExercise.textContent = exercise
     pwarmUpExercise.textContent = time
 
-    warmUpExercise.classList.add("flex" ,"gap-5" ,"border-4" ,"hover:border-4" ,"hover:border-amber-500" ,"p-4" ,"rounded-md")
-    h1warmUpExercise.classList.add()
-    pwarmUpExercise.classList.add()
+    warmUpExercise.classList.add("flex" ,"gap-5" ,"border-4" ,"hover:border-4" ,"hover:border-amber-500" ,"p-4" ,"rounded-md", "items-center")
+    h1warmUpExercise.classList.add("bg-indigo-200", "p-4", "rounded-full", "text-lg")
+    pwarmUpExercise.classList.add("bg-green-200", "p-3", "rounded-full")
 
    });
 
@@ -113,10 +113,10 @@ export function renderWorkout(workoutObject){
     pReps.textContent = "Reps: "+ reps
    
     mainExercisesExercise.classList.add("flex" ,"flex-col" ,"gap-4" , "border-4" , "hover:border-4" ,"hover:border-amber-500" ,"p-4" ,"rounded-md")
-    exerciseDetails.classList.add("flex" ,"gap-4" ,"ml-14")
-    h1MainExercises.classList.add()
-    pSets.classList.add()
-    pReps.classList.add()
+    exerciseDetails.classList.add("flex" ,"gap-4" ,"ml-14", "items-center")
+    h1MainExercises.classList.add("bg-indigo-200", "p-4", "rounded-full", "text-lg")
+    pSets.classList.add("bg-green-200", "p-3", "rounded-full")
+    pReps.classList.add("bg-green-200", "p-3", "rounded-full")
    });
 
 
@@ -138,9 +138,9 @@ coolDownArray.forEach(element => {
             pCoolDownExercise.textContent = time
 
         divCoolDownExerciseDetail.classList.add("flex" , "flex-col" ,"gap-3")
-        divCoolDownExercise.classList.add("flex" ,"gap-5" ,"border-4" ,"hover:border-4" ,"hover:border-amber-500" ,"p-4" ,"rounded-md")
-        h1CoolDownExercise.classList.add()
-        pCoolDownExercise.classList.add()
+        divCoolDownExercise.classList.add("flex" ,"gap-5" ,"border-4" ,"hover:border-4" ,"hover:border-amber-500" ,"p-4" ,"rounded-md" , "items-center")
+        h1CoolDownExercise.classList.add("bg-indigo-200", "p-4", "rounded-full", "text-lg")
+        pCoolDownExercise.classList.add("bg-green-200", "p-3", "rounded-full")
 });
 
 

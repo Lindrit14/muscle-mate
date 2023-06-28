@@ -14,15 +14,15 @@
 <body class="bg-stone-200">
 
   <div class="flex gap-3">
-    <div id="side-navbar" class="flex flex-col items-center  bg-slate-800 w-28 h-screen drop-shadow-2xl rounded-r-2xl  ">
+    <div id="side-navbar" class="flex flex-col items-center   bg-slate-800 w-28 h-screen drop-shadow-2xl rounded-r-2xl  ">
 
       <div id="logo" class="w-16 h-1/4 mt-4 makepicWhite ">
         <img src="img/Rastergrafik.png" alt="MuscleMate-Logo" class="">
       </div>
-
+  
       <div id="utility-icons" class="flex flex-col w-12 h-3/4 justify-start gap-20">
         <div id="home" class="text-3xl text-center">
-
+  
           
             <a href="/dashboard.html" class=" text-gray-600 hover:text-blue-400" aria-current="page"><i class="fa-solid fa-house text-white hover:text-amber-500 hover:animate-pulse"></i></a>  
         </div>
@@ -38,39 +38,47 @@
           
           <a href="/stats.html" class="text-gray-600 hover:text-blue-400"><i class="fa-solid fa-chart-column text-white hover:text-amber-500 hover:animate-pulse"></i></a>
         </div>
+  
+        <div id="savedquotes" class="text-3xl  text-center">
+          <a href="/savedquotes.html" class="text-gray-600 hover:text-blue-400"> <i class="fa fa-quote-right text-white hover:text-amber-500 hover:animate-pulse" aria-hidden="true"></i> </a>
+        </div>
+  
       </div>
-
+      
       <div id="logout" class=" flex flex-col gap-4 text-4xl  text-center m-4">
-        <a href="#"><i class="fa-solid fa-user  text-white hover:text-amber-500 hover:animate-pulse"></i></a>
-        <a href="login.html"><i class="fa-solid fa-power-off text-white hover:text-amber-500 hover:animate-pulse"></i></a>
+        
+        <a id="logout-button" href="login.html"><i class="fa-solid fa-power-off text-white hover:text-amber-500 hover:animate-pulse"></i></a>
       </div>
-
-
+  
+  
     </div>
 
 
-    <div>
-          <form> 
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <div class="flex flex-col w-full justify-center items-center gap-28">
+
+      <h1 class="text-4xl self-center">Change your Stats</h1>
+
+          <form class="flex flex-col gap-4 w-full justify-center items-center"> 
+            <div class="p-4 rounded-lg drop-shadow-lg">
+                <label for="name"></label>
+                <input type="text" id="name" name="name" required placeholder="Name" class="p-4 rounded-lg" >
             </div>
-            <div>
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" required>
+            <div class="p-4 rounded-lg drop-shadow-lg">
+                <label for="age"></label>
+                <input type="number" id="age" name="age" required placeholder="Age" class="p-4 rounded-lg">
             </div>
-            <div>
-                <label for="weight">Weight:</label>
-                <input type="number" id="weight" name="weight" required>
+            <div class="p-4 rounded-lg drop-shadow-lg">
+                <label for="weight"></label>
+                <input type="number" id="weight" name="weight" required placeholder="Weight" class="p-4 rounded-lg">
             </div>
-            <div>
-                <label for="height">Height:</label>
-                <input type="number" id="height" name="height" required>
+            <div class="p-4 rounded-lg drop-shadow-lg">
+                <label for="height"></label>
+                <input type="number" id="height" name="height" required placeholder="Height" class="p-4 rounded-lg">
             </div>
             
-            <div>
-              <button type="button" onclick="putStat()">Save</button>
-              <button type="button" onclick="location.href = 'dashboard.html'">Cancel</button>
+            <div class="">
+              <button class="btn-primary" type="button" onclick="putStat()">Save</button>
+              <button class="btn-primary bg-transparent hover:bg-transparent hover:border-2 border-blue-500 text-gray-700" type="button" onclick="location.href = 'dashboard.html'">Cancel</button>
             </div>
           </form>
 

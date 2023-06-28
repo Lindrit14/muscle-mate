@@ -47,7 +47,7 @@ export function makePostRequest(quote) {
     });
 }
 
-const logoutButton = document.getElementById('log-out');
+const logoutButton = document.getElementById('logout-button');
 
 logoutButton.addEventListener('click', () => {
 

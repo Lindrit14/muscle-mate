@@ -47,34 +47,65 @@
     </div>
     
     <div id="logout" class=" flex flex-col gap-4 text-4xl  text-center m-4">
-    
+     
       <a id="logout-button" href="login.html"><i class="fa-solid fa-power-off text-white hover:text-amber-500 hover:animate-pulse"></i></a>
     </div>
 
 
   </div>
-<div id="centerContainer" class="flex flex-col items-center w-full gap-20 ">
-    <div id="favouriteExercises" class="flex flex-col w-full items-center">
-      <div id="title" class="mt-10  ">
-        <h1 class="text-4xl text-slate-700" >Your favourite Exercises</h1>
-      </div>
-      
-          <main id="mainElement" class="flex justify-center gap-3 mt-4 flex-wrap ">
   
-          </main>
-    </div>
-   
+        
 
-    <div id="linkToCustomWorkout" class="">
-      <a href="customWorkout.html"><button class="btn-primary text-2xl p-4 rounded-lg">Create Custom Workout</button></a>
-    </div>
-     
-  </div>
       
 
+      <div id="left-side" class="w-full flex flex-col justify-center items-center gap-32">
+
+        <div class="w-full flex justify-center">
+            <h1 class="text-4xl">Let AI Create Your Workout</h1>
+          </div>
+
+        <form id="workoutForm" method="get" class="flex flex-col gap-4">
+      
+    
+          <div class="p-4 rounded-lg drop-shadow-lg">
+            <label for="equipment"></label>
+            <input type="text" id="equipment" name="equipment" required class="p-4 rounded-lg" placeholder="Equipment">
+          </div>
+      
+          <div class="p-4 rounded-lg drop-shadow-lg">
+            <label for="muscle"></label>
+            <input type="text" id="muscle" name="muscle" required class="p-4 rounded-lg" placeholder="Muscle">
+          </div>
+      
+          <div class="p-4 rounded-lg drop-shadow-lg">
+            <label for="fitnessLevel"></label>
+            <input type="text" id="fitnessLevel" name="fitness_level" required class="p-4 rounded-lg" placeholder="Fitness Level">
+          </div>
+      
+          <div class="p-4 rounded-lg drop-shadow-lg">
+            <label for="fitnessGoals"></label>
+            <input type="text" id="fitnessGoals" name="fitness_goals" required class="p-4  rounded-lg" placeholder="Fitness Goals">
+          </div>
+      
+          <button id="getWorkoutBtn" class="btn-primary" type="">Create</button>
+        </form>
+  
+        <div id="overlay" class="fixed inset-0 hidden items-center justify-center bg-gray-900 bg-opacity-50 ">
+            <div id="workoutContainer" class="flex flex-col justify-center w-3/4 items-center mb-6">
+
+            </div>
+          </div>
+
+        
+
+  
+        </div>
+      </div>
+
+
     </div>
 
-      <script type="module" src="js/workouts.js"></script>
       
+      <script type="module" src="js/custumWorkout.js"></script>
     </body>
 </html>

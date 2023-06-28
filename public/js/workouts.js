@@ -1,29 +1,4 @@
 import { alertDanger } from './dom.js';
-// document.getElementById("dropdown-btn").addEventListener("click", function() {
-//     let dropdownContent = document.getElementById("dropdown-content");
-//     dropdownContent.classList.toggle("hidden");
-//     });
-
-// window.addEventListener("click", function(e) {
-//     let dropdown = document.getElementById("dropdown-content");
-//     let button = document.getElementById("dropdown-btn");
-//     if (!dropdown.contains(e.target) && !button.contains(e.target)) {
-//         dropdown.classList.add("hidden");
-//     }
-//     });
-
-
-// let workoutLinks = document.querySelectorAll("#dropdown-content a");
-// let selectedWorkoutContent = document.getElementById("selected-workout-content");
-
-// workoutLinks.forEach(function(link) {
-//     link.addEventListener("click", function(e) {
-//     e.preventDefault();
-//     let content = link.dataset.content;
-//     selectedWorkoutContent.textContent = content;
-//     document.getElementById("selected-workout").classList.remove("hidden");
-// });
-// });
 
 
 function getCookie(){ 
@@ -105,27 +80,6 @@ function renderAddedExercises() {
 
 
 
-
-//   function deleteExercise(exercise) {
-//     fetch("/deleteExercise",
-//       {
-//         method: 'DELETE',
-//         headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(exercise)
-//       }).then(response => response.text()) 
-//     .then(data => {
-//       alertDanger();
-//       const article = document.getElementById(exercise.id)
-//       article.remove()
-//       console.log(data); 
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
-// }
 
 function deleteExercise(exercise) {
   fetch(`/deleteExercise/${exercise.id}`,

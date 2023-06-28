@@ -21,7 +21,7 @@ function renderAddedQuotes() {
 
 
 
-              article.classList.add("w-1/4", "max-w-sm", "bg-white", "border", "border-gray-200", "rounded-lg", "shadow");
+              article.classList.add("p-6", "bg-white", "rounded-lg", "shadow", "w-1/4", "h-[16rem]");
               quote.classList.add("mb-3", "font-normal", "text-gray-700");
               author.classList.add("mb-3", "font-normal", "text-gray-700");
               divIcon.classList.add("flex", "justify-end","pr-4", "pb-4")

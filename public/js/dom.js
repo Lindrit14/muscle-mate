@@ -5,6 +5,7 @@ export const searchInput = document.getElementById("searchInput");
 export const searchButton = document.getElementById("searchButton");
 export const loadMoreBtn = document.getElementById("loadMoreBtn");
 export const backToTopButton = document.querySelector(".back-to-top");
+export const logoutButton = document.getElementById("logout-button")
 
 export function createExercises(exerciseArray, itemsPerPage, startIndex, firstLoad) {
     if (firstLoad) {
