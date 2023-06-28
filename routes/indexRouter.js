@@ -27,5 +27,8 @@ router.get("/equipmentList", indexController.getAllEquipment)
 router.get("exercisesByEquipment/:equipment", indexController.getExercisesByEquipment)
 
 
+router.get("/getWorkout", indexController.getWorkout)
+
+
 
 module.exports = router;
