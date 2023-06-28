@@ -33,4 +33,9 @@
         background-repeat: no-repeat; 
     }
 
+
+    .icon-insider i{
+        position:absolute;
+    }
+
 }

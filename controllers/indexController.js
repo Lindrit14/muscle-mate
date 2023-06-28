@@ -219,6 +219,32 @@ exports.getExercisesByBodyPart = async(req, res) => {
   };
 
 
+  exports.getWorkout = async (req, res) => {
+    const { time, equipment, muscle, fitness_level, fitness_goals } = req.query;
+  
+    const options = {
+      method: 'GET',
+      url: 'https://workout-planner1.p.rapidapi.com/customized',
+      params: {
+        time,
+        equipment,
+        muscle,
+        fitness_level,
+        fitness_goals
+      },
+      headers: {
+        'X-RapidAPI-Key': '593af75b92mshaabf8f815410a9ap1e1772jsndfd7ac8c9f18',
+        'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
+      }
+    };
+  
+    try {
+      const response = await axios.request(options);
+      res.json(response.data);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
 
 
 

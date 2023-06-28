@@ -13,15 +13,8 @@
 </head>
 
 <body>
-     <nav class="bg-white w-full z-20 top-0 left-0 border-b border-gray-200 drop-shadow-md">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
-          <a href="#" class="flex items-center">
-            <img src="img/Rastergrafik.png" class="h-14 mr-3" alt="">
-            <span class="self-center text-2xl font-black whitespace-nowrap">MuscleMate</span>
-          </a>
-          <div class="flex md:order-2 gap-2">
-            <button id="logout-button" type="button" class=" text-gray-600 hover:text-blue-400"> <a href="login.html">Logout</a> </button>
     
+
             <button type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -75,13 +68,42 @@
     </div>
 
 
-
       <main id="mainElement" class="flex justify-center gap-3 mt-4 flex-wrap">
 
       </main>
 
+      <form id="workoutForm" method="get" >
+      
+    
+        <div>
+          <label for="equipment">Equipment:</label>
+          <input type="text" id="equipment" name="equipment" required>
+        </div>
+    
+        <div>
+          <label for="muscle">Muscle:</label>
+          <input type="text" id="muscle" name="muscle" required>
+        </div>
+    
+        <div>
+          <label for="fitnessLevel">Fitness Level:</label>
+          <input type="text" id="fitnessLevel" name="fitness_level" required>
+        </div>
+    
+        <div>
+          <label for="fitnessGoals">Fitness Goals:</label>
+          <input type="text" id="fitnessGoals" name="fitness_goals" required>
+        </div>
+    
+        <button id="getWorkoutBtn" class="btn-primary" type="">Create</button>
+      </form>
 
+      <div id="workoutContainer" class="flex flex-col justify-center gap-16 items-center mb-6">
+
+
+      </div>
 
       <script type="module" src="js/workouts.js"></script>
+      <script type="module" src="js/custumWorkout.js"></script>
     </body>
 </html>

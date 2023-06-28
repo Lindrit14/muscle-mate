@@ -1,6 +1,8 @@
 export const mainElement = document.getElementById("quote-otd");
 import { makePostRequest } from './dashboard.js';
 
+
+
 export function createQuotes(QuotesArray, firstLoad) {
     if (firstLoad) {
         mainElement.innerHTML = ""
@@ -13,8 +15,10 @@ export function createQuotes(QuotesArray, firstLoad) {
         const article = document.createElement("article");
         const text = document.createElement("h2");
         const author = document.createElement("p");
+
         const icon = document.createElement("i");
         const divIcon = document.createElement("div")
+
 
         //implementieren text-to-speak
         const speakButton = document.createElement("button");
@@ -36,6 +40,7 @@ export function createQuotes(QuotesArray, firstLoad) {
         copyIcon.classList.add("fas", "fa-copy");
 
         copyButton.appendChild(copyIcon);
+
         
         copyButton.addEventListener("click", () => {
           copyToClipboard(quote.quote);
@@ -52,6 +57,7 @@ export function createQuotes(QuotesArray, firstLoad) {
         //author.classList.add("mb-3", "font-normal", "text-gray-700");
 
 
+
         text.textContent = quote.quote;
         author.textContent = quote.author;
 
@@ -62,6 +68,7 @@ export function createQuotes(QuotesArray, firstLoad) {
         mainElement.append(article);
         article.append(text);
         article.append(author);
+
         divIcon.append(icon);
         article.append(divIcon);
         article.append(speakButton);// hier append
@@ -89,6 +96,7 @@ export function alertSuccesfull() {
   }, 2000);
 }
 
+
 // quote text-tospeak func
 function speakText(text) {
   const speechSynthesis = window.speechSynthesis;
@@ -107,17 +115,3 @@ function copyToClipboard(text) {
   document.body.removeChild(textarea);
 }
 
-/* export function alertDanger() {
-  const alert = document.createElement("div");
-  alert.classList.add("fixed", "bottom-4", "right-4", "p-6", "text-lg", "text-red-800", "rounded-xl", "bg-red-50", "dark:bg-gray-800", "dark:text-red-400");
-  alert.innerHTML = 
-    <span class="font-medium">Removed! </span>Your Quote has been removed!
-  ;
-
-  document.body.appendChild(alert);
-
-  setTimeout(() => {
-    alert.remove();
-  }, 2000);
-}
-*/

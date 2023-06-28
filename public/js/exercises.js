@@ -58,7 +58,7 @@ export function makePostRequest(exercise) {
 
 // Assuming you have the necessary HTML elements defined in your dashboard.html file
 
-const logoutButton = document.getElementById('logout-button');
+
 
 logoutButton.addEventListener('click', () => {
   
