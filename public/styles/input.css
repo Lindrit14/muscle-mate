@@ -12,8 +12,25 @@
         font-size: 2em;
         color: #38bdf8;
     }
+
+    .right-border-icon{
+        transition: border-color 0.3s;
+    }
     	
+    .right-border-icon-focua{
+        border-color:white;
+    }
     
-    
+    .background-svg{
+        background-image: url('../img/wave.svg');
+        
+        background-repeat: no-repeat; 
+    }
+
+    .background-svg-bottom{
+        background-image: url('../img/wave-bottom.svg');
+        background-size: cover;
+        background-repeat: no-repeat; 
+    }
 
 }

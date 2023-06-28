@@ -13,7 +13,7 @@
 
     <title>Home</title>
 </head>
-<body class="m-0">
+<body>
 
 <!-- NAVBAR -->
 
@@ -24,8 +24,8 @@
         <span class="self-center text-2xl font-black whitespace-nowrap">MuscleMate</span>
       </a>
       <div class="flex md:order-2 gap-2">
-        <button type="button" class=" text-gray-600 hover:text-blue-400"> <a href="login.html">Sign Up</a> </button>
-        <button type="button" class="btn-primary"><a href="register.html">Register Now</a></button>
+        <button id="logout-button" type="button" class=" text-gray-600 hover:text-blue-400"> <a href="login.html">Logout</a> </button>
+
         <button type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -33,102 +33,59 @@
       </div>
       <div id="navbar-sticky" class=" md:flex">
         <ul class="flex space-x-4">
-         
           <li>
-            <a href="#" class="text-gray-600 hover:text-blue-400">About</a>
+            <a href="/dashboard.html" class=" text-gray-600 hover:text-blue-400" aria-current="page">Dashboard</a>
+          </li>
+        
+          <li>
+            <a href="AI.html" class="text-gray-600 hover:text-blue-400">AI</a>
           </li>
           <li>
-            <a href="#" class="text-gray-600 hover:text-blue-400">Services</a>
-          </li>
-          <li>
-            <a href="#" class="text-gray-600 hover:text-blue-400">Contact</a>
+            <a href="/workouts.html" class="text-gray-600 hover:text-blue-400">Workouts</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   
-  <header class="flex items-center p-20 gap-20 background-svg h-screen">
-    <div id="header-picture" class="w-1/2">
-      <img src="img/Rastergrafik.png" alt="logo">
-    </div>
-    <div id="header-text" class="flex flex-col flex-wrap w-1/2 gap-3 ">  
-      <div id="upper-text">
-        <h1 class="text-8xl">Muscle Mate</h1>
-        <p class="text-4xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, ipsa.</p>
+  
+<!-- MAIN -->
+<div class="flex justify-center mt-5 w-auto">
+    <div class="p-3  ">
+      <div id="searchContainer" class="flex items-center mb-5 gap-4 justify-center">
+        <input type="text" id="searchInput" placeholder="Search exercises by name" class="w-3/4 py-2 px-4 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button id="searchButton" class="btn-primary">Search</button>
       </div>
-      <div id="lower-button">
-        <button class="btn-primary ">Get Started</button>
-        
-      </div>
-      
-    </div>
-  </header>
+      <div id="mainContainer" class="flex flex-wrap gap-3 w-full justify-center"> 
 
-  <div id="About-us" class="flex flex-col items-center gap-3 p-8 bg-white">
-    <div id="top-about ">
-      <h1 class="text-4xl">About Muscle Mate</h1>
-    </div>
-    <div id="text-part" class="flex gap-3  ">
-      <div id="bottom-about-1" class="w-1/3">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem reiciendis libero obcaecati quas laborum odio, itaque, quis eligendi doloribus et nisi molestias? Unde, aliquid earum! Voluptatem veniam similique sequi iusto?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, sed esse voluptate delectus ratione natus ea vero eum in ad voluptatum ipsa expedita iusto, a molestiae modi minus culpa nisi.
-      
       </div>
-      <div id="bottom-about-1" class="w-1/3">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem reiciendis libero obcaecati quas laborum odio, itaque, quis eligendi doloribus et nisi molestias? Unde, aliquid earum! Voluptatem veniam similique sequi iusto?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, sed esse voluptate delectus ratione natus ea vero eum in ad voluptatum ipsa expedita iusto, a molestiae modi minus culpa nisi.
-        
-      </div>
-      <div id="bottom-about-1" class="w-1/3">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem reiciendis libero obcaecati quas laborum odio, itaque, quis eligendi doloribus et nisi molestias? Unde, aliquid earum! Voluptatem veniam similique sequi iusto?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, sed esse voluptate delectus ratione natus ea vero eum in ad voluptatum ipsa expedita iusto, a molestiae modi minus culpa nisi.
+      <div class="flex justify-center mt-4">
+        <button id="loadMoreBtn" class="btn-primary">Load More</button>
       </div>
     </div>
-  </div>
-
-  <div id="services" class="flex h-72 gap-12 justify-evenly m-10 items-center">
-    <div id="database-exercises" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3 ">
-      <div id="database-exercises-icon" class=" flex bg-indigo-300 w-24 h-24 justify-center items-center rounded-full ">
-        <div id="icon1" class="text-4xl">
-          <i class="fa-solid fa-database" style="color: #ffffff;"></i>
-        </div>
-      </div>
-      <div id="database-exercises-info" >
-        <p class="text-m text-gray-400"> Lorem ipsum dolor sit amet consectetur repellat maiores, quibusdam temporibus aliquam, numquam maxime veniam nisi cupiditate eligendi quam ad?</p>
-      </div>
-    </div>
-      
-<div id="workouts" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3 ">
-  <div id="workouts-icon" class="bg-amber-300  w-24 h-24 flex justify-center items-center rounded-full">
-    <div id="icon2" class="text-4xl">
-      <i class="fa-solid fa-dumbbell" style="color: #ffffff;"></i>
-    </div>
-  </div>
-
-  <div id="workouts-info">
-    <p class="text-m text-gray-400"> Lorem ipsum dolor sit amet consectetur repellat maiores, quibusdam temporibus aliquam, numquam maxime veniam nisi cupiditate eligendi quam ad?</p>
-  </div>
-
 </div>
-      <div id="quotes" class="flex flex-col gap-3 items-center h-60 flex-wrap w-1/3">
-        <div id="quotes-icon" class="bg-green-300  w-24 h-24 flex justify-center items-center rounded-full">
-          <div id="icon3" class="text-4xl">
-            <i class="fa-solid fa-comment" style="color: #ffffff;"></i>
-          </div>
-        </div>
+  
+<button class="back-to-top hidden">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="back-to-top-icon"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M7 11l5-5m0 0l5 5m-5-5v12"
+      />
+    </svg>
+  </button>
 
-        <div id="quotes-info">
-          <p class="text-m text-gray-400"> Lorem ipsum dolor sit amet consectetur repellat maiores, quibusdam temporibus aliquam, numquam maxime veniam nisi cupiditate eligendi quam ad?</p>
-        </div>
-      </div>
-
-      
-  </div>
 
  <!-- FOOTER -->
 
-  <footer class="bg-white dark:bg-gray-900 py-4  bottom-0 w-full   ">
+  <footer class="bg-white dark:bg-gray-900 py-4  bottom-0 w-full ">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
@@ -164,7 +121,7 @@
           </div>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div class="sm:flex sm:items-center sm:justify-between  ">
+      <div class="sm:flex sm:items-center sm:justify-between">
           <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">MuscleMate</a>. All Rights Reserved.
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
@@ -184,12 +141,9 @@
     </div>
 </footer>
 
-<div id="under-footer" class="bg-white background-svg-bottom w-full h-60 ">
+  
 
-</div>
-
-
-
-    
+      
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

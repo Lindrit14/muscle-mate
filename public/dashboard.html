@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/output.css">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/47657bff12.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class="bg-stone-200">
+
+  <div class="flex gap-3">
+    <div id="side-navbar" class="flex flex-col items-center  bg-slate-800 w-28 h-screen drop-shadow-2xl rounded-r-2xl  ">
+
+      <div id="logo" class="w-16 h-1/4 mt-4 makepicWhite ">
+        <img src="img/Rastergrafik.png" alt="MuscleMate-Logo" class="">
+      </div>
+
+      <div id="utility-icons" class="flex flex-col w-12 h-3/4 justify-start gap-20">
+        <div id="home" class="text-3xl text-center">
+
+          
+            <a href="/dashboard.html" class=" text-gray-600 hover:text-blue-400" aria-current="page"><i class="fa-solid fa-house text-white hover:text-amber-500 hover:animate-pulse"></i></a>  
+        </div>
+        <div id="exercises" class="  text-3xl text-center">
+          
+          <a href="exercises.html"><i class="fa-solid fa-dumbbell text-white hover:text-amber-500 hover:animate-pulse" ></i></a>
+        </div>
+        <div id="workouts" class="text-3xl text-center">
+          
+          <a href="/workouts.html" class="text-gray-600 hover:text-blue-400"><i class="fa-solid fa-bookmark text-white hover:text-amber-500 hover:animate-pulse"></i></a>
+        </div>
+        <div id="stats" class="text-3xl  text-center">
+          
+          <a href="/stats.html" class="text-gray-600 hover:text-blue-400"><i class="fa-solid fa-chart-column text-white hover:text-amber-500 hover:animate-pulse"></i></a>
+        </div>
+      </div>
+      <div id="savedquotes" class="text-3xl  text-center">
+        <a href="/savedquotes.html" class="text-gray-600 hover:text-blue-400"> <i class="fa fa-quote-right text-white hover:text-amber-500 hover:animate-pulse" aria-hidden="true"></i> </a>
+      </div>
+      <div id="logout" class=" flex flex-col gap-4 text-4xl  text-center m-4">
+        <a href="#"><i class="fa-solid fa-user  text-white hover:text-amber-500 hover:animate-pulse"></i></a>
+        <a id="log-out" href="login.html"><i class="fa-solid fa-power-off text-white hover:text-amber-500 hover:animate-pulse"></i></a>
+      </div>
+
+
+    </div>
+
+    <div id="dashboard" class="flex flex-col gap-3 m-5 w-full">
+
+
+
+      <div id="mainContainer" class=" flex flex-col w-full bg-slate-50 rounded-xl justify-center items-center drop-shadow-2xl h-full  ">
+            
+          
+
+        <h1 class="text-4xl text-center font-bold font-sans mb-8">  Quote of the Day </h1>
+
+        <div id="quote-otd" class="flex justify-center w-2/3 max-w-md flex-wrap p-10">
+
+        </div>
+
+        <div id="icon-Container" class="flex justify-between w-2/3">
+
+          <div class="flex justify-start gap-4">
+
+            <!-- <button id="sound-icon" class="rounded-full p-2 bg-blue-500 text-white">
+              <i class="fas fa-volume-up"></i>
+            </button> -->
+
+            <!-- <button id="copy-icon" class="rounded-full p-2 bg-blue-500 text-white">
+              <i class="fas fa-copy"></i>
+            </button> -->
+
+          </div>
+       
+
+        </div>
+
+      </div>
+      
+      
+      <div id="bottom-container" class="flex gap-3 h-1/2 ">
+        <div id="workouts-for-the-weak" class="w-1/4  bg-slate-50 rounded-xl p-7 flex flex-col gap-3 drop-shadow-2xl">
+          <div id="Monday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3" >
+            Monday 
+          </div>
+          <div id="Tuesday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3" >
+            Tuesday
+          </div>
+          <div id="Wednesday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3">
+            Wednesday
+          </div>
+          <div id="Thursday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3">
+            Thursday
+          </div>
+          <div id="Friday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3">
+            Friday
+          </div>
+          <div id="Saturday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3">
+            Saturday
+          </div>
+          <div id="Sunday" class="day w-fill h-1/6 bg-neutral-300 rounded-md flex justify-start items-center pl-3">
+            Sunday
+          </div>
+        </div>
+  
+        <div id="stats" class="w-1/4  bg-slate-50 rounded-xl flex items-center justify-center flex-col drop-shadow-2xl">
+            <div>
+              
+
+
+
+
+
+              
+            </div>
+        </div>
+
+        <div id="dailys" class="w-2/4 bg-slate-50 rounded-xl flex flex-col  drop-shadow-2xl">
+          <div id="dailys-title" class=" flex justify-start w-fill p-3">
+            <h1>Hey Miles, don't forget to</h1>
+          </div>
+        
+          <div id="dailys-tasks" class="flex flex-col items-center justify-center w-fill h-full gap-4">
+            <div class="flex items-center mb-4">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 mr-2">
+              <div>track your weight</div>
+            </div>
+        
+            <div class="flex items-center mb-4">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 mr-2">
+              <div>drink water</div>
+            </div>
+        
+            <div class="flex items-center mb-4">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 mr-2">
+              <div>eat / drink your protein</div>
+            </div>
+        
+            <div class="flex items-center mb-4">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 mr-2">
+              <div>take your supplements</div>
+            </div>
+        
+            <div class="flex items-center mb-4">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 mr-2">
+              <div>take your equipment</div>
+            </div>
+        
+            <div class="flex items-center mb-4">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 mr-2">
+              <div>go to the gym</div>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+
+      </div>
+     
+
+    </div>
+
+</div>
+
+<script type="module" src="js/quotemain.js"></script>
+</body>
+</html>

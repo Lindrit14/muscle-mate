@@ -1,5 +1,5 @@
 let admin = {
-    exercises: []
+    quotes: []
 }
 
 module.exports.admin = admin
