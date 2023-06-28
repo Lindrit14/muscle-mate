@@ -26,10 +26,23 @@ import { alertDanger } from './dom.js';
 // });
 
 
-
+function getCookie(){ 
+  const x = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("token="))
+  ?.split("=")[1];
+  return x;
+}
 
 function renderAddedExercises() {
-    fetch(`/addExercise`)
+    fetch(`/addExercise`,{
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization' : getCookie()
+      }
+    })
       .then(response => response.json())
       .then(exercises => {
         const mainElement = document.getElementById("mainElement")
@@ -120,7 +133,8 @@ function deleteExercise(exercise) {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization' : getCookie()
       },
       body: JSON.stringify(exercise)
     }).then(response => response.text()) 

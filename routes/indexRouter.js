@@ -8,6 +8,7 @@ const indexController = require('../controllers/indexController');
 
 router.get("/allExercises", indexController.getAllExercises)
 
+router.get("/oneQuote", indexController.getOneQuote)
 
 router.get("/exercisesByBodyPart/:bodyPart", indexController.getExercisesByBodyPart)
 
@@ -24,6 +25,9 @@ router.get("/exercisesByTargetMuscle/:muscle", indexController.getExercisesByTar
 router.get("/equipmentList", indexController.getAllEquipment)
 
 router.get("exercisesByEquipment/:equipment", indexController.getExercisesByEquipment)
+
+
+router.get("/getWorkout", indexController.getWorkout)
 
 
 

@@ -19,14 +19,14 @@
     <main class="bg-gradient flex items-center justify-center h-screen">
         <div class="bg-white p-8 rounded shadow-md">
             <h2 class="text-2xl mb-6 text-center text-gray-800">Login</h2>
-            <form>
+            <form id="login-form">
               <div class="mb-4">
-                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-                <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your email address">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address or Username</label>
+                <input type="text" id="username" name="email-or-name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your email address">
               </div>
               <div class="mb-6">
                 <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your password">
+                <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your password">
               </div>
               <div class="flex items-center justify-between mb-6">
                 <button type="submit" class="btn-primary">Login</button>
@@ -40,5 +40,7 @@
           </div>
     </main>
     
+
+    <script type="module" src="js/login.js"></script>
 </body>
 </html>
