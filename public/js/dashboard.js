@@ -7,6 +7,10 @@ let days = document.getElementsByClassName("day");
 
 days[currentDay].classList.add("border-2", "border-amber-500");
 
+
+
+
+
 export let quotes = [];
 
 export function fetchQuotes(){
@@ -19,3 +23,6 @@ export function fetchQuotes(){
           console.error(error);
       });
 }
+
+
+
